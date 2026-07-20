@@ -1,0 +1,84 @@
+[
+  {
+    "id": "ORD-001",
+    "userId": "guest",
+    "items": [
+      {
+        "productId": "p3",
+        "name": "Sony WH-1000XM5 Headphones",
+        "price": 26990,
+        "quantity": 1,
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80"
+      },
+      {
+        "productId": "p7",
+        "name": "boAt Rockerz 450 Bluetooth Headphones",
+        "price": 1299,
+        "quantity": 2,
+        "image": "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&q=80"
+      }
+    ],
+    "total": 29588,
+    "status": "Delivered",
+    "address": {
+      "name": "Rahul Sharma",
+      "phone": "9876543210",
+      "addressLine": "12, Green Park Colony",
+      "city": "Jaipur",
+      "state": "Rajasthan",
+      "pincode": "302015"
+    },
+    "paymentMethod": "UPI",
+    "createdAt": "2024-06-10T08:30:00Z"
+  },
+  {
+    "id": "ORD-002",
+    "userId": "guest",
+    "items": [
+      {
+        "productId": "p4",
+        "name": "Nike Air Max 270",
+        "price": 8995,
+        "quantity": 1,
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80"
+      }
+    ],
+    "total": 8995,
+    "status": "Processing",
+    "address": {
+      "name": "Priya Mehta",
+      "phone": "9123456789",
+      "addressLine": "45B, Sector 18",
+      "city": "Noida",
+      "state": "Uttar Pradesh",
+      "pincode": "201301"
+    },
+    "paymentMethod": "Credit Card",
+    "createdAt": "2024-07-01T14:20:00Z"
+  },
+  {
+    "id": "ORD-93947",
+    "userId": "guest",
+    "items": [
+      {
+        "productId": "p9",
+        "name": "Wipro 9W LED Bulb (Pack of 6)",
+        "price": 349,
+        "quantity": 1,
+        "image": "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80"
+      }
+    ],
+    "total": 389,
+    "status": "Processing",
+    "address": {
+      "name": "Khushi Kushwaha",
+      "phone": "9693233843",
+      "addressLine": "varanasi",
+      "city": "varanasi",
+      "state": "Uttar Pradesh",
+      "pincode": "800001"
+    },
+    "paymentMethod": "UPI",
+    "createdAt": "2026-07-20T19:35:09.468Z"
+  }
+]

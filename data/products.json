@@ -1,0 +1,347 @@
+[
+  {
+    "id": "p1",
+    "name": "Samsung Galaxy S24 Ultra",
+    "category": "Electronics",
+    "subcategory": "Smartphones",
+    "price": 124999,
+    "originalPrice": 134999,
+    "discount": 7,
+    "rating": 4.5,
+    "reviewCount": 2847,
+    "stock": 45,
+    "brand": "Samsung",
+    "description": "The Samsung Galaxy S24 Ultra is the pinnacle of Samsung's flagship lineup. With its stunning 6.8-inch Dynamic AMOLED display, 200MP camera system, and the powerful Snapdragon 8 Gen 3 processor, it redefines what a smartphone can do. The integrated S Pen makes it the ultimate productivity device.",
+    "features": [
+      "6.8-inch QHD+ Dynamic AMOLED 2X, 120Hz",
+      "200MP main camera + 12MP ultrawide + 10MP 3x + 50MP 5x telephoto",
+      "Snapdragon 8 Gen 3 for Galaxy",
+      "5000mAh battery with 45W fast charging",
+      "Integrated S Pen",
+      "IP68 water resistance",
+      "Android 14 with One UI 6.1"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&q=80",
+      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&q=80"
+    ],
+    "tags": ["smartphone", "samsung", "5g", "flagship"],
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "p2",
+    "name": "Apple MacBook Air M3",
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "price": 114900,
+    "originalPrice": 119900,
+    "discount": 4,
+    "rating": 4.8,
+    "reviewCount": 1523,
+    "stock": 20,
+    "brand": "Apple",
+    "description": "The MacBook Air with M3 chip delivers exceptional performance in an incredibly thin and light design. With up to 18 hours of battery life, a gorgeous Liquid Retina display, and the power of Apple Silicon, it's the perfect laptop for students and professionals alike.",
+    "features": [
+      "13.6-inch Liquid Retina display",
+      "Apple M3 chip with 8-core CPU",
+      "8GB unified memory, 256GB SSD",
+      "Up to 18 hours battery life",
+      "1080p FaceTime HD camera",
+      "MagSafe 3 charging",
+      "macOS Sonoma"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80",
+      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&q=80"
+    ],
+    "tags": ["laptop", "apple", "macbook", "m3"],
+    "createdAt": "2024-01-16T10:00:00Z"
+  },
+  {
+    "id": "p3",
+    "name": "Sony WH-1000XM5 Headphones",
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "price": 26990,
+    "originalPrice": 34990,
+    "discount": 23,
+    "rating": 4.7,
+    "reviewCount": 4210,
+    "stock": 60,
+    "brand": "Sony",
+    "description": "Industry-leading noise canceling with two processors and eight microphones. 30-hour battery life with quick charge. Exceptional call quality with Auto NC Optimizer. Crystal clear hands-free calling, even in noisy environments.",
+    "features": [
+      "Industry-leading noise cancellation",
+      "30-hour battery life",
+      "Quick charge: 3 min = 3 hours",
+      "Multipoint connection - 2 devices simultaneously",
+      "360 Reality Audio certified",
+      "Foldable design for easy portability",
+      "Speak-to-chat technology"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&q=80"
+    ],
+    "tags": ["headphones", "sony", "noise-cancelling", "wireless"],
+    "createdAt": "2024-01-17T10:00:00Z"
+  },
+  {
+    "id": "p4",
+    "name": "Nike Air Max 270",
+    "category": "Fashion",
+    "subcategory": "Footwear",
+    "price": 8995,
+    "originalPrice": 12995,
+    "discount": 31,
+    "rating": 4.3,
+    "reviewCount": 876,
+    "stock": 100,
+    "brand": "Nike",
+    "description": "The Nike Air Max 270 features Nike's biggest heel Air unit yet for an incredibly cushioned feel. Inspired by two icons of big Air: the Air Max 180 and Air Max 93. This update delivers a fresh look in a comfortable, easy-to-wear package.",
+    "features": [
+      "Mesh upper for breathability",
+      "270-degree Max Air unit in heel",
+      "Foam midsole for lightweight cushioning",
+      "Rubber outsole for traction",
+      "Available in multiple colorways",
+      "Padded collar for comfort"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80"
+    ],
+    "tags": ["shoes", "nike", "airmax", "running"],
+    "createdAt": "2024-01-18T10:00:00Z"
+  },
+  {
+    "id": "p5",
+    "name": "Levi's 511 Slim Fit Jeans",
+    "category": "Fashion",
+    "subcategory": "Clothing",
+    "price": 2499,
+    "originalPrice": 3999,
+    "discount": 37,
+    "rating": 4.2,
+    "reviewCount": 3421,
+    "stock": 200,
+    "brand": "Levi's",
+    "description": "The Levi's 511 Slim Fit Jeans are a modern classic. Cut close to the body from hip to ankle, they're versatile enough for work or weekend. Made with a touch of stretch for all-day comfort.",
+    "features": [
+      "Slim fit from hip to ankle",
+      "Stretch denim for comfort",
+      "5-pocket styling",
+      "Button fly",
+      "99% Cotton, 1% Elastane",
+      "Machine washable"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80",
+      "https://images.unsplash.com/photo-1604176424472-9d9944ec8d34?w=600&q=80"
+    ],
+    "tags": ["jeans", "levis", "denim", "slim-fit"],
+    "createdAt": "2024-01-19T10:00:00Z"
+  },
+  {
+    "id": "p6",
+    "name": "Prestige 3 Litre Pressure Cooker",
+    "category": "Home & Kitchen",
+    "subcategory": "Cookware",
+    "price": 1299,
+    "originalPrice": 1899,
+    "discount": 32,
+    "rating": 4.4,
+    "reviewCount": 6712,
+    "stock": 150,
+    "brand": "Prestige",
+    "description": "Prestige Deluxe Alpha Outer Lid Pressure Cooker is made of high-grade aluminum with a sturdy build. The unique Tri-Vent pressure release system ensures safe cooking. Ideal for Indian cooking with its optimal size for everyday use.",
+    "features": [
+      "3-litre capacity",
+      "High-grade aluminum body",
+      "Tri-Vent pressure release system",
+      "Induction and gas compatible",
+      "ISI certified",
+      "2-year warranty"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80",
+      "https://images.unsplash.com/photo-1585515320310-259814833e62?w=600&q=80"
+    ],
+    "tags": ["cooker", "prestige", "kitchen", "cookware"],
+    "createdAt": "2024-01-20T10:00:00Z"
+  },
+  {
+    "id": "p7",
+    "name": "boAt Rockerz 450 Bluetooth Headphones",
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "price": 1299,
+    "originalPrice": 3990,
+    "discount": 67,
+    "rating": 4.1,
+    "reviewCount": 18420,
+    "stock": 300,
+    "brand": "boAt",
+    "description": "boAt Rockerz 450 is an on-ear wireless headphone with superior sound quality and a comfortable fit. With 15 hours of playback and a foldable design, it's perfect for everyday use. The built-in mic ensures crisp hands-free calling.",
+    "features": [
+      "40mm dynamic drivers",
+      "15 hours playback",
+      "Bluetooth 5.0",
+      "Built-in mic",
+      "Foldable design",
+      "Padded ear cushions",
+      "USB Type-C charging"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&q=80",
+      "https://images.unsplash.com/photo-1524678714210-9917a6c619c2?w=600&q=80"
+    ],
+    "tags": ["headphones", "boat", "bluetooth", "wireless"],
+    "createdAt": "2024-01-21T10:00:00Z"
+  },
+  {
+    "id": "p8",
+    "name": "Canon EOS 1500D DSLR Camera",
+    "category": "Electronics",
+    "subcategory": "Cameras",
+    "price": 34990,
+    "originalPrice": 44995,
+    "discount": 22,
+    "rating": 4.5,
+    "reviewCount": 2109,
+    "stock": 25,
+    "brand": "Canon",
+    "description": "The Canon EOS 1500D is a great entry-level DSLR camera with a 24.1 MP APS-C CMOS sensor. It features built-in Wi-Fi and NFC for easy sharing, a 9-point autofocus system, and Full HD 1080p video recording. Perfect for budding photographers.",
+    "features": [
+      "24.1 MP APS-C CMOS sensor",
+      "DIGIC 4+ image processor",
+      "9-point autofocus",
+      "Full HD 1080p video",
+      "Built-in Wi-Fi and NFC",
+      "3-inch LCD screen",
+      "Kit lens: EF-S 18-55mm f/3.5-5.6 IS II"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=80"
+    ],
+    "tags": ["camera", "canon", "dslr", "photography"],
+    "createdAt": "2024-01-22T10:00:00Z"
+  },
+  {
+    "id": "p9",
+    "name": "Wipro 9W LED Bulb (Pack of 6)",
+    "category": "Home & Kitchen",
+    "subcategory": "Lighting",
+    "price": 349,
+    "originalPrice": 599,
+    "discount": 42,
+    "rating": 4.3,
+    "reviewCount": 9834,
+    "stock": 500,
+    "brand": "Wipro",
+    "description": "Wipro LED bulbs offer energy-efficient lighting with a lifespan of up to 15,000 hours. These 9W bulbs give the light equivalent of a 60W incandescent bulb, saving up to 85% energy. Ideal for home, office, and commercial use.",
+    "features": [
+      "9W = 60W equivalent",
+      "850 lumens brightness",
+      "Cool white 6500K",
+      "15,000 hours lifespan",
+      "B22 base",
+      "BEE 5-star rated",
+      "Pack of 6 bulbs"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+    ],
+    "tags": ["led", "bulb", "wipro", "lighting"],
+    "createdAt": "2024-01-23T10:00:00Z"
+  },
+  {
+    "id": "p10",
+    "name": "Fastrack Casual Watch for Men",
+    "category": "Fashion",
+    "subcategory": "Watches",
+    "price": 1795,
+    "originalPrice": 2995,
+    "discount": 40,
+    "rating": 4.0,
+    "reviewCount": 1243,
+    "stock": 80,
+    "brand": "Fastrack",
+    "description": "Fastrack's casual watch collection brings you stylish timepieces at great value. With a round dial, stainless steel case, and a durable silicon strap, this watch is perfect for everyday casual wear and outdoor activities.",
+    "features": [
+      "Quartz movement",
+      "44mm stainless steel case",
+      "Silicon strap",
+      "Scratch-resistant mineral glass",
+      "Water resistant up to 30m",
+      "Analog display",
+      "3 ATM water resistance"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80",
+      "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=600&q=80"
+    ],
+    "tags": ["watch", "fastrack", "casual", "men"],
+    "createdAt": "2024-01-24T10:00:00Z"
+  },
+  {
+    "id": "p11",
+    "name": "Xiaomi Smart TV 5A 43 inch",
+    "category": "Electronics",
+    "subcategory": "Televisions",
+    "price": 24999,
+    "originalPrice": 32999,
+    "discount": 24,
+    "rating": 4.2,
+    "reviewCount": 5671,
+    "stock": 35,
+    "brand": "Xiaomi",
+    "description": "Xiaomi Smart TV 5A features a 43-inch full HD display with Dolby Audio and DTS:X for an immersive entertainment experience. Powered by Android TV 11, it gives you access to Netflix, Prime Video, Disney+ Hotstar, and more.",
+    "features": [
+      "43-inch Full HD (1920x1080)",
+      "Android TV 11",
+      "Dolby Audio + DTS:X",
+      "2GB RAM + 8GB storage",
+      "3x HDMI, 2x USB ports",
+      "Bluetooth 5.0 + Wi-Fi",
+      "Voice assistant support"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=80",
+      "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=600&q=80"
+    ],
+    "tags": ["tv", "xiaomi", "smart-tv", "android"],
+    "createdAt": "2024-01-25T10:00:00Z"
+  },
+  {
+    "id": "p12",
+    "name": "Wildcraft 45L Rucksack Backpack",
+    "category": "Sports & Outdoors",
+    "subcategory": "Bags",
+    "price": 2299,
+    "originalPrice": 3999,
+    "discount": 43,
+    "rating": 4.1,
+    "reviewCount": 789,
+    "stock": 120,
+    "brand": "Wildcraft",
+    "description": "The Wildcraft 45L Rucksack is built for adventurers who demand performance and durability. With multiple compartments, padded back panel, adjustable straps, and a rain cover included, it's the ideal companion for trekking and travel.",
+    "features": [
+      "45-litre capacity",
+      "Polyester 600D fabric",
+      "Padded back panel and shoulder straps",
+      "Multiple compartments",
+      "Side hydration pocket",
+      "Rain cover included",
+      "Chest strap with whistle"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
+      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=600&q=80"
+    ],
+    "tags": ["backpack", "wildcraft", "trekking", "travel"],
+    "createdAt": "2024-01-26T10:00:00Z"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "u1",
+    "name": "Demo User",
+    "email": "demo@shopsphere.in",
+    "password": "demo1234",
+    "createdAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "u2",
+    "name": "Admin User",
+    "email": "admin@shopsphere.in",
+    "password": "admin1234",
+    "role": "admin",
+    "createdAt": "2024-01-01T00:00:00Z"
+  }
+]
