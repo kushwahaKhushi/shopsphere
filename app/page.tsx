@@ -6,15 +6,20 @@ import ProductRow     from "@/components/home/ProductRow";
 import TrustBar       from "@/components/home/TrustBar";
 import OfferBanners   from "@/components/home/OfferBanners";
 
+export const dynamic = "force-dynamic";
 // Fetch products from our own API (which reads from Supabase)
 async function getProducts(): Promise<Product[]> {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-    const res = await fetch(`${baseUrl}/api/products`, {
-      next: { revalidate: 60 }, // ISR — revalidate every 60 s
-    });
-    if (!res.ok) return [];
-    return res.json();
+   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+   const res = await fetch(`${baseUrl}/api/products`, {
+  cache: "no-store",
+});
+  if (!res.ok) {
+  console.error(await res.text());
+  return [];
+}
+
+return await res.json();
   } catch {
     return [];
   }

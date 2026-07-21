@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import { Product } from "@/types";
 import ProductDetailClient from "./ProductDetailClient";
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+export const dynamic = "force-dynamic";
+const BASE = process.env.NEXT_PUBLIC_SITE_URL!;
 
 async function getProduct(id: string): Promise<Product | null> {
   try {
@@ -24,11 +25,7 @@ async function getAllProducts(): Promise<Product[]> {
   }
 }
 
-export async function generateStaticParams() {
-  // pre-render common products at build time
-  const products = await getAllProducts();
-  return products.map((p) => ({ id: p.id }));
-}
+export const revalidate = 0;
 
 export default async function ProductDetailPage({ params }: { params: { id: string } }) {
   const product = await getProduct(params.id);
