@@ -14,10 +14,12 @@ function useCountdown(target: Date) {
     };
   };
   const [time, setTime] = useState(calc);
-  useEffect(() => { const t = setInterval(() => setTime(calc()), 1000); return () => clearInterval(t); });
+  useEffect(() => {
+  const t = setInterval(() => setTime(calc()), 1000);
+  return () => clearInterval(t);
+}, [target]);
   return time;
 }
-
 function Digit({ val }: { val: number }) {
   return (
     <span className="bg-navbg text-white font-bold text-sm w-8 h-8 flex items-center justify-center rounded-md tabular-nums">
@@ -27,8 +29,22 @@ function Digit({ val }: { val: number }) {
 }
 
 export default function DealsBanner() {
-  const target = new Date(Date.now() + 9 * 3600000 + 42 * 60000 + 18000);
-  const { h, m, s } = useCountdown(target);
+  const [mounted, setMounted] = useState(false);
+
+useEffect(() => {
+  setMounted(true);
+}, []);
+
+if (!mounted) {
+  return (
+    <div className="bg-white rounded-xl shadow-sm h-56 animate-pulse" />
+  );
+}
+  const [target] = useState(
+  () => new Date(Date.now() + 9 * 3600000 + 42 * 60000 + 18000)
+);
+
+const { h, m, s } = useCountdown(target);
 
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden">
