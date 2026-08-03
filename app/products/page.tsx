@@ -5,11 +5,14 @@ import ProductsClient from "./ProductsClient";
 export const dynamic = "force-dynamic";
 async function getProducts(): Promise<Product[]> {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL!;
-    const res = await fetch(`${baseUrl}/api/products`, {
-      cache: "no-store",
-    });
+    const baseUrl =
+  process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
 
+const res = await fetch(`${baseUrl}/api/products`, {
+  cache: "no-store",
+});
     if (!res.ok) return [];
 
     return await res.json();
