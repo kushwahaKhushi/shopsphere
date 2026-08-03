@@ -66,17 +66,17 @@ export default function ProductCard({ product }: Props) {
               <span>{product.rating}</span>
               <Star size={10} fill="white" strokeWidth={0} />
             </div>
-            <span className="text-xs text-gray-400">({product.reviewCount.toLocaleString()})</span>
+            <span className="text-xs text-gray-400">({product.reviewCount.toLocaleString("en-IN")})</span>
           </div>
 
           {/* Price */}
           <div className="flex items-baseline gap-2 mt-1">
             <span className="text-base font-bold text-gray-900">
-              ₹{product.price.toLocaleString()}
+              ₹{product.price.toLocaleString("en-IN")}
             </span>
             {product.originalPrice > product.price && (
               <span className="text-xs text-gray-400 line-through">
-                ₹{product.originalPrice.toLocaleString()}
+                ₹{product.originalPrice.toLocaleString("en-IN")}
               </span>
             )}
           </div>

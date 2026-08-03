@@ -10,17 +10,23 @@ export const dynamic = "force-dynamic";
 // Fetch products from our own API (which reads from Supabase)
 async function getProducts(): Promise<Product[]> {
   try {
-   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL!;
-   const res = await fetch(`${baseUrl}/api/products`, {
-  cache: "no-store",
-});
-  if (!res.ok) {
-  console.error(await res.text());
-  return [];
-}
+    const baseUrl =
+      process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "http://localhost:3000";
 
-return await res.json();
-  } catch {
+    const res = await fetch(`${baseUrl}/api/products`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      console.error(await res.text());
+      return [];
+    }
+
+    return await res.json();
+  } catch (err) {
+    console.error(err);
     return [];
   }
 }
