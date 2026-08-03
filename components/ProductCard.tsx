@@ -1,94 +1,167 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { Star, ShoppingCart } from "lucide-react";
+import Link   from "next/link";
+import Image  from "next/image";
+import { useState } from "react";
+import { Star, ShoppingCart, Heart, Eye } from "lucide-react";
 import { Product } from "@/types";
-import { useCart } from "@/context/CartContext";
-import toast from "react-hot-toast";
+import { useCart }  from "@/context/CartContext";
+import toast        from "react-hot-toast";
 
-interface Props {
-  product: Product;
-}
+const FALLBACK = "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=600&q=80";
 
-export default function ProductCard({ product }: Props) {
+export default function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
+  const [wishlisted, setWish] = useState(false);
+  const [imgSrc,     setImg]  = useState(product.images?.[0] || FALLBACK);
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleAdd = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product, 1);
-    toast.success(`${product.name} added to cart!`, {
+    toast.success(`Added to cart!`, {
       icon: "🛒",
-      duration: 2000,
+      duration: 1800,
+      style: { background: "#0d3d39", color: "#f0fdfa" },
     });
   };
 
+  const handleWish = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setWish((v) => !v);
+    toast(wishlisted ? "Removed from wishlist" : "Added to wishlist ❤️", {
+      duration: 1400,
+    });
+  };
+
+  const stars = Array.from({ length: 5 }, (_, i) => i + 1);
+
   return (
-    <Link href={`/product/${product.id}`} className="group block">
-      <div className="card h-full flex flex-col overflow-hidden cursor-pointer">
-        {/* Image */}
-        <div className="relative aspect-square overflow-hidden bg-gray-50 border-b">
+    <Link href={`/product/${product.id}`} className="group block h-full">
+      <div className="relative h-full flex flex-col bg-white rounded-2xl border border-gray-100
+                      shadow-card hover:shadow-card-lg hover:-translate-y-1
+                      transition-all duration-300 overflow-hidden">
+
+        {/* ── Image ─────────────────────────────────── */}
+        <div className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white"
+             style={{ paddingTop: "100%" }}>
           <Image
-            src={product.images[0]}
+            src={imgSrc}
             alt={product.name}
             fill
-            className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+            className="object-contain p-5 img-zoom"
             unoptimized
+            onError={() => setImg(FALLBACK)}
           />
+
+          {/* Top-left: discount */}
           {product.discount > 0 && (
-            <span className="absolute top-2 left-2 discount-badge">
-              {product.discount}% off
+            <span className="absolute top-3 left-3 discount-badge z-10">
+              -{product.discount}%
             </span>
           )}
-          {product.stock < 10 && product.stock > 0 && (
-            <span className="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
-              Only {product.stock} left
+
+          {/* Top-right: wishlist */}
+          <button
+            onClick={handleWish}
+            className={`absolute top-3 right-3 z-10 w-8 h-8 rounded-full
+                        flex items-center justify-center shadow-sm
+                        border transition-all duration-200
+                        ${wishlisted
+                          ? "bg-red-50 border-red-200 text-red-500"
+                          : "bg-white border-gray-200 text-gray-400 opacity-0 group-hover:opacity-100"
+                        }`}
+            aria-label="Wishlist"
+          >
+            <Heart size={14} fill={wishlisted ? "currentColor" : "none"} />
+          </button>
+
+          {/* Bottom: quick-action bar on hover */}
+          <div className="absolute bottom-0 left-0 right-0 z-10
+                          flex gap-2 p-3
+                          translate-y-full group-hover:translate-y-0
+                          transition-transform duration-250 ease-out">
+            <button
+              onClick={handleAdd}
+              className="flex-1 flex items-center justify-center gap-1.5
+                         bg-primary hover:bg-primary-dark text-white
+                         text-xs font-bold py-2.5 rounded-xl
+                         transition-colors shadow-glow"
+            >
+              <ShoppingCart size={13} />
+              Add to Cart
+            </button>
+           <button
+  onClick={(e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.href = `/product/${product.id}`;
+  }}
+  className="w-9 flex items-center justify-center
+             bg-white border border-gray-200 rounded-xl
+             hover:border-primary hover:text-primary
+             transition-colors shadow-sm"
+  aria-label="Quick view"
+>
+  <Eye size={14} />
+</button>
+          </div>
+
+          {/* Low-stock ribbon */}
+          {product.stock > 0 && product.stock < 6 && (
+            <span className="absolute bottom-0 left-0 right-0 bg-red-500/90
+                             text-white text-[10px] font-bold text-center py-1
+                             group-hover:bottom-[52px] transition-all duration-250">
+              Only {product.stock} left!
             </span>
           )}
         </div>
 
-        {/* Info */}
-        <div className="p-3 flex flex-col flex-1 gap-1">
+        {/* ── Info ──────────────────────────────────── */}
+        <div className="flex flex-col gap-1.5 p-3.5 flex-1">
           {/* Brand */}
-          <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">
+          <p className="text-[11px] font-bold text-primary uppercase tracking-wider truncate">
             {product.brand}
           </p>
 
           {/* Name */}
-          <h3 className="text-sm font-medium text-gray-800 line-clamp-2 leading-tight">
+          <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 leading-snug flex-1">
             {product.name}
           </h3>
 
-          {/* Rating */}
-          <div className="flex items-center gap-1.5 mt-0.5">
-            <div className="flex items-center gap-0.5 bg-green-600 text-white text-xs font-bold px-1.5 py-0.5 rounded">
-              <span>{product.rating}</span>
-              <Star size={10} fill="white" strokeWidth={0} />
+          {/* Stars */}
+          <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-0.5">
+              {stars.map((s) => (
+                <Star
+                  key={s}
+                  size={11}
+                  className={product.rating >= s ? "star-filled" : "star-empty"}
+                  fill={product.rating >= s ? "currentColor" : "none"}
+                  strokeWidth={1.5}
+                />
+              ))}
             </div>
-            <span className="text-xs text-gray-400">({product.reviewCount.toLocaleString("en-IN")})</span>
+            <span className="text-[11px] text-gray-400 leading-none">
+              ({product.reviewCount.toLocaleString("en-IN")})
+            </span>
           </div>
 
           {/* Price */}
-          <div className="flex items-baseline gap-2 mt-1">
-            <span className="text-base font-bold text-gray-900">
+          <div className="flex items-center gap-2 mt-0.5 flex-wrap">
+            <span className="price-current">
               ₹{product.price.toLocaleString("en-IN")}
             </span>
             {product.originalPrice > product.price && (
-              <span className="text-xs text-gray-400 line-through">
-                ₹{product.originalPrice.toLocaleString("en-IN")}
-              </span>
+              <>
+                <span className="price-original">
+                  ₹{product.originalPrice.toLocaleString("en-IN")}
+                </span>
+                <span className="price-saving">{product.discount}% off</span>
+              </>
             )}
           </div>
-
-          {/* Add to cart */}
-          <button
-            onClick={handleAddToCart}
-            className="mt-auto pt-2 w-full flex items-center justify-center gap-2 bg-primary text-white text-sm py-2 rounded hover:bg-primary-dark transition-colors font-medium"
-          >
-            <ShoppingCart size={15} />
-            Add to Cart
-          </button>
         </div>
       </div>
     </Link>

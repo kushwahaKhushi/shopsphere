@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="min-h-[70vh] flex items-center justify-center px-4">
       <div className="text-center max-w-md">
         <div className="flex justify-center mb-6">
-          <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center">
+          <div className="w-24 h-24 bg-primary-50 rounded-full flex items-center justify-center">
             <SearchX size={48} className="text-primary" />
           </div>
         </div>

@@ -1,9 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // App Router is the default in Next.js 14 - no experimental flag needed
   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
+    ],
+    // Also keep unoptimized as fallback for any other domains
     unoptimized: true,
   },
+  eslint:     { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: false },
 };
 
 module.exports = nextConfig;

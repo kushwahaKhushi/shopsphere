@@ -1,38 +1,17 @@
 import { Suspense } from "react";
-import { Product } from "@/types";
+import { getProducts } from "@/lib/data";
 import ProductsClient from "./ProductsClient";
 
 export const dynamic = "force-dynamic";
-async function getProducts(): Promise<Product[]> {
-  try {
-    const baseUrl =
-  process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
-
-const res = await fetch(`${baseUrl}/api/products`, {
-  cache: "no-store",
-});
-    if (!res.ok) return [];
-
-    return await res.json();
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
-}
 
 export default async function ProductsPage() {
   const products = await getProducts();
-
   return (
-    <Suspense
-      fallback={
-        <div className="p-10 text-center text-gray-500">
-          Loading products…
-        </div>
-      }
-    >
+    <Suspense fallback={
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+      </div>
+    }>
       <ProductsClient products={products} />
     </Suspense>
   );

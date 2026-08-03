@@ -1,35 +1,31 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Product } from "@/types";
 import ProductCard from "@/components/ProductCard";
 
 interface Props {
-  title: string;
-  products: Product[];
+  title:       string;
+  products:    Product[];
   viewAllHref: string;
 }
 
 export default function ProductRow({ title, products, viewAllHref }: Props) {
-  return (
-    <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b">
-        <h2 className="text-base font-bold text-gray-800 border-l-4 border-primary pl-2">
-          {title}
-        </h2>
-        <Link
-          href={viewAllHref}
-          className="flex items-center gap-1 text-xs text-primary font-semibold hover:underline"
-        >
-          View All <ChevronRight size={14} />
-        </Link>
-      </div>
+  if (!products.length) return null;
 
-      {/* Product grid */}
-      <div className="p-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+  return (
+    <div className="bg-white rounded-3xl shadow-card overflow-hidden">
+      {title && (
+        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50">
+          <h2 className="section-title">{title}</h2>
+          <Link href={viewAllHref}
+            className="flex items-center gap-1 text-sm text-primary font-semibold
+                       hover:underline underline-offset-2">
+            View All <ArrowRight size={14} />
+          </Link>
+        </div>
+      )}
+      <div className="p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        {products.map((p) => <ProductCard key={p.id} product={p} />)}
       </div>
     </div>
   );

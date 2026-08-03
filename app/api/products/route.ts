@@ -1,24 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 
+export const dynamic = "force-dynamic";
+
+const FALLBACK = "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=600&q=80";
+
 // ── Map DB snake_case → frontend camelCase ──────────────────────
 function toProduct(row: any) {
+  const images = Array.isArray(row.images) && row.images.length > 0
+    ? row.images : [FALLBACK];
   return {
     id:            row.id,
     name:          row.name,
     category:      row.category,
-    subcategory:   row.subcategory,
-    price:         row.price,
-    originalPrice: row.original_price,
-    discount:      row.discount,
-    rating:        Number(row.rating),
-    reviewCount:   row.review_count,
-    stock:         row.stock,
-    brand:         row.brand,
-    description:   row.description,
-    features:      row.features ?? [],
-    images:        row.images   ?? [],
-    tags:          row.tags     ?? [],
+    subcategory:   row.subcategory   ?? row.category,
+    price:         Number(row.price),
+    originalPrice: Number(row.original_price) || Number(row.price),
+    discount:      Number(row.discount) || 0,
+    rating:        Number(row.rating)   || 4.0,
+    reviewCount:   Number(row.review_count) || 0,
+    stock:         Number(row.stock)    || 0,
+    brand:         row.brand            ?? "Generic",
+    description:   row.description     ?? "",
+    features:      Array.isArray(row.features) ? row.features : [],
+    images,
+    tags:          Array.isArray(row.tags) ? row.tags : [],
     createdAt:     row.created_at,
   };
 }
